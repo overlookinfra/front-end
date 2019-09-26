@@ -19,7 +19,7 @@ steps:
     git:
       name: nebula-workflow-examples
       repository: https://github.com/puppetlabs/nebula-workflow-examples.git
-      
+
 - name: create-namespace
   image: projectnebula/kubectl:bf8ecb9
   spec:
@@ -687,28 +687,28 @@ steps:
   dependsOn:
   - user-deployment
 
-- name: expose-service
-  image: projectnebula/kubectl:bf8ecb9
-  spec:
-    command: apply
-    file: deploy/front-end-ingress.yml
-    namespace: sock-shop
-    cluster:
-      name: nebula-demo-cluster
-      url:
-        $type: Secret
-        name: url
-      cadata:
-        $type: Secret
-        name: cadata
-      token:
-        $type: Secret
-        name: token
-    git:
-      name: front-end
-      repository: https://github.com/kenazk/front-end.git
-  dependsOn:
-    - front-end-service
+# - name: expose-service
+#   image: projectnebula/kubectl:bf8ecb9
+#   spec:
+#     command: apply
+#     file: deploy/front-end-ingress.yml
+#     namespace: sock-shop
+#     cluster:
+#       name: nebula-demo-cluster
+#       url:
+#         $type: Secret
+#         name: url
+#       cadata:
+#         $type: Secret
+#         name: cadata
+#       token:
+#         $type: Secret
+#         name: token
+#     git:
+#       name: front-end
+#       repository: https://github.com/kenazk/front-end.git
+#   dependsOn:
+#     - front-end-service
 - name: notify-team
   image: projectnebula/slack-notification:bf8ecb9
   spec:
@@ -718,7 +718,8 @@ steps:
     channel: "#nebula-workflows"
     message: "Successfully deployed Puppetize Bike Shop! 🚲🚲🚲"
   dependsOn:
-  - expose-service
+    - front-end-service
+  # - expose-service
 - name: resolve-ticket 
   image: projectnebula/jira-resolve:9e3f1fc
   spec:
@@ -729,4 +730,5 @@ steps:
     url: https://tickets.puppetlabs.com
     issue: PN-39
   dependsOn:
-    - expose-service
+    - front-end-service
+    # - expose-service
