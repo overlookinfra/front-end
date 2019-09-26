@@ -1,6 +1,7 @@
 # language: node_js
 
 sudo: required
+if: branch = master
 
 # node_js:
 #   - "4.8.1"
@@ -16,7 +17,8 @@ sudo: required
 #   - npm install
 
 env:
-  - GROUP=kenazk COMMIT="${TRAVIS_COMMIT}" TAG=latest REPO=front-end NEBULA_WORKFLOW=puppetize-demo-app-1
+  # - GROUP=kenazk COMMIT="${TRAVIS_COMMIT}" TAG=latest REPO=front-end NEBULA_WORKFLOW=puppetize-demo-app-1
+  - NEBULA_WORKFLOW=puppetize-demo-app-1
 
 script:
   # - set -e
