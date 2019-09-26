@@ -2,6 +2,24 @@ version: v1
 description: Deploy Sock Shop app onto GKE cluster
 
 steps:
+
+- name: provision-cluster
+  image: projectnebula/terraform:bf8ecb9
+  spec:
+    vars:
+      gcp_region: us-east1
+      gcp_location: us-east1-b
+      gcp_project: kenazk-sandbox
+    workspace: nebula-demo
+    directory: example-workflows/provision-gke-terraform/infra/
+    credentials:
+      credentials.json:
+        $type: Secret
+        name: credentials
+    git:
+      name: nebula-workflow-examples
+      repository: https://github.com/puppetlabs/nebula-workflow-examples.git
+      
 - name: create-namespace
   image: projectnebula/kubectl:bf8ecb9
   spec:
@@ -22,6 +40,8 @@ steps:
     git:
       name: front-end
       repository: https://github.com/kenazk/front-end.git
+  dependsOn:
+  - provision-cluster
 
 - name: carts-db-deployment
   image: projectnebula/kubectl:bf8ecb9
