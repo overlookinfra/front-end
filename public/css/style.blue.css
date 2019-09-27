@@ -217,11 +217,8 @@ h1 {
 }
 #main-slider {
   margin-bottom: 30px;
-  border: solid 1px #fff;
   opacity: 0;
   filter: alpha(opacity=0);
-  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 .box.slideshow ul li div,
 #main-slider ul li div {
