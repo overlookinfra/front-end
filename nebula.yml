@@ -110,8 +110,8 @@ steps:
       name: front-end
       repository: https://github.com/kenazk/front-end.git
   dependsOn:
-  - carts-db-service
-  # - create-namespace
+  # - carts-db-service
+  - create-namespace
 
 - name: carts-service
   image: projectnebula/kubectl:bf8ecb9
@@ -203,8 +203,8 @@ steps:
       name: front-end
       repository: https://github.com/kenazk/front-end.git
   dependsOn:
-  - catalogue-db-service
-  # - create-namespace
+  # - catalogue-db-service
+  - create-namespace
 
 - name: catalogue-service
   image: projectnebula/kubectl:bf8ecb9
@@ -342,8 +342,8 @@ steps:
       name: front-end
       repository: https://github.com/kenazk/front-end.git
   dependsOn:
-  - orders-db-service
-  # - create-namespace
+  # - orders-db-service
+  - create-namespace
 
 - name: orders-service
   image: projectnebula/kubectl:bf8ecb9
@@ -700,6 +700,9 @@ steps:
     message: "Successfully deployed Puppetize Bike Shop to Production! 🚲"
   dependsOn:
     - front-end-service
+    - carts-service
+    - catalogue-service
+    - orders-service
 - name: resolve-ticket 
   image: projectnebula/jira-resolve:9e3f1fc
   spec:

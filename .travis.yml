@@ -18,7 +18,7 @@ if: branch = master
 
 env:
   #  - GROUP=kenazk COMMIT="${TRAVIS_COMMIT}" TAG=latest REPO=front-end NEBULA_WORKFLOW=puppetize-demo-app-1
-  - NEBULA_WORKFLOW=puppetize-demo-app-1
+  - NEBULA_WORKFLOW=deploy-puppetize-bike-shop
 
 script:
   # - set -e
