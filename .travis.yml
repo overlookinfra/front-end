@@ -1,7 +1,7 @@
 # language: node_js
 
 sudo: required
- if: branch = master
+if: branch = master
 
 # node_js:
 #   - "4.8.1"
