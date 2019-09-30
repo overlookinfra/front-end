@@ -43,51 +43,51 @@ steps:
   dependsOn:
   - provision-cluster
 
-- name: carts-db-deployment
-  image: projectnebula/kubectl:bf8ecb9
-  spec:
-    command: apply
-    file: deploy/carts-db-dep.yaml
-    namespace: sock-shop
-    cluster:
-      name: nebula-demo-cluster
-      url:
-        $type: Secret
-        name: url
-      cadata:
-        $type: Secret
-        name: cadata
-      token:
-        $type: Secret
-        name: token
-    git:
-      name: front-end
-      repository: https://github.com/kenazk/front-end.git
-  dependsOn:
-  - create-namespace
+# - name: carts-db-deployment
+#   image: projectnebula/kubectl:bf8ecb9
+#   spec:
+#     command: apply
+#     file: deploy/carts-db-dep.yaml
+#     namespace: sock-shop
+#     cluster:
+#       name: nebula-demo-cluster
+#       url:
+#         $type: Secret
+#         name: url
+#       cadata:
+#         $type: Secret
+#         name: cadata
+#       token:
+#         $type: Secret
+#         name: token
+#     git:
+#       name: front-end
+#       repository: https://github.com/kenazk/front-end.git
+#   dependsOn:
+#   - create-namespace
 
-- name: carts-db-service
-  image: projectnebula/kubectl:bf8ecb9
-  spec:
-    command: apply
-    file: deploy/carts-db-svc.yaml
-    namespace: sock-shop
-    cluster:
-      name: nebula-demo-cluster
-      url:
-        $type: Secret
-        name: url
-      cadata:
-        $type: Secret
-        name: cadata
-      token:
-        $type: Secret
-        name: token
-    git:
-      name: front-end
-      repository: https://github.com/kenazk/front-end.git
-  dependsOn:
-  - carts-db-deployment
+# - name: carts-db-service
+#   image: projectnebula/kubectl:bf8ecb9
+#   spec:
+#     command: apply
+#     file: deploy/carts-db-svc.yaml
+#     namespace: sock-shop
+#     cluster:
+#       name: nebula-demo-cluster
+#       url:
+#         $type: Secret
+#         name: url
+#       cadata:
+#         $type: Secret
+#         name: cadata
+#       token:
+#         $type: Secret
+#         name: token
+#     git:
+#       name: front-end
+#       repository: https://github.com/kenazk/front-end.git
+#   dependsOn:
+#   - carts-db-deployment
 
 - name: carts-deployment
   image: projectnebula/kubectl:bf8ecb9
@@ -136,51 +136,51 @@ steps:
   dependsOn:
   - carts-deployment
 
-- name: catalogue-db-deployment
-  image: projectnebula/kubectl:bf8ecb9
-  spec:
-    command: apply
-    file: deploy/catalogue-db-dep.yaml
-    namespace: sock-shop
-    cluster:
-      name: nebula-demo-cluster
-      url:
-        $type: Secret
-        name: url
-      cadata:
-        $type: Secret
-        name: cadata
-      token:
-        $type: Secret
-        name: token
-    git:
-      name: front-end
-      repository: https://github.com/kenazk/front-end.git
-  dependsOn:
-  - create-namespace
+# - name: catalogue-db-deployment
+#   image: projectnebula/kubectl:bf8ecb9
+#   spec:
+#     command: apply
+#     file: deploy/catalogue-db-dep.yaml
+#     namespace: sock-shop
+#     cluster:
+#       name: nebula-demo-cluster
+#       url:
+#         $type: Secret
+#         name: url
+#       cadata:
+#         $type: Secret
+#         name: cadata
+#       token:
+#         $type: Secret
+#         name: token
+#     git:
+#       name: front-end
+#       repository: https://github.com/kenazk/front-end.git
+#   dependsOn:
+#   - create-namespace
 
-- name: catalogue-db-service
-  image: projectnebula/kubectl:bf8ecb9
-  spec:
-    command: apply
-    file: deploy/catalogue-db-svc.yaml
-    namespace: sock-shop
-    cluster:
-      name: nebula-demo-cluster
-      url:
-        $type: Secret
-        name: url
-      cadata:
-        $type: Secret
-        name: cadata
-      token:
-        $type: Secret
-        name: token
-    git:
-      name: front-end
-      repository: https://github.com/kenazk/front-end.git
-  dependsOn:
-  - catalogue-db-deployment
+# - name: catalogue-db-service
+#   image: projectnebula/kubectl:bf8ecb9
+#   spec:
+#     command: apply
+#     file: deploy/catalogue-db-svc.yaml
+#     namespace: sock-shop
+#     cluster:
+#       name: nebula-demo-cluster
+#       url:
+#         $type: Secret
+#         name: url
+#       cadata:
+#         $type: Secret
+#         name: cadata
+#       token:
+#         $type: Secret
+#         name: token
+#     git:
+#       name: front-end
+#       repository: https://github.com/kenazk/front-end.git
+#   dependsOn:
+#   - catalogue-db-deployment
 
 - name: catalogue-deployment
   image: projectnebula/kubectl:bf8ecb9
@@ -275,51 +275,51 @@ steps:
   dependsOn:
   - front-end-deployment
 
-- name: orders-db-deployment
-  image: projectnebula/kubectl:bf8ecb9
-  spec:
-    command: apply
-    file: deploy/orders-db-dep.yaml
-    namespace: sock-shop
-    cluster:
-      name: nebula-demo-cluster
-      url:
-        $type: Secret
-        name: url
-      cadata:
-        $type: Secret
-        name: cadata
-      token:
-        $type: Secret
-        name: token
-    git:
-      name: front-end
-      repository: https://github.com/kenazk/front-end.git
-  dependsOn:
-  - create-namespace
+# - name: orders-db-deployment
+#   image: projectnebula/kubectl:bf8ecb9
+#   spec:
+#     command: apply
+#     file: deploy/orders-db-dep.yaml
+#     namespace: sock-shop
+#     cluster:
+#       name: nebula-demo-cluster
+#       url:
+#         $type: Secret
+#         name: url
+#       cadata:
+#         $type: Secret
+#         name: cadata
+#       token:
+#         $type: Secret
+#         name: token
+#     git:
+#       name: front-end
+#       repository: https://github.com/kenazk/front-end.git
+#   dependsOn:
+#   - create-namespace
 
-- name: orders-db-service
-  image: projectnebula/kubectl:bf8ecb9
-  spec:
-    command: apply
-    file: deploy/orders-db-svc.yaml
-    namespace: sock-shop
-    cluster:
-      name: nebula-demo-cluster
-      url:
-        $type: Secret
-        name: url
-      cadata:
-        $type: Secret
-        name: cadata
-      token:
-        $type: Secret
-        name: token
-    git:
-      name: front-end
-      repository: https://github.com/kenazk/front-end.git
-  dependsOn:
-  - orders-db-deployment
+# - name: orders-db-service
+#   image: projectnebula/kubectl:bf8ecb9
+#   spec:
+#     command: apply
+#     file: deploy/orders-db-svc.yaml
+#     namespace: sock-shop
+#     cluster:
+#       name: nebula-demo-cluster
+#       url:
+#         $type: Secret
+#         name: url
+#       cadata:
+#         $type: Secret
+#         name: cadata
+#       token:
+#         $type: Secret
+#         name: token
+#     git:
+#       name: front-end
+#       repository: https://github.com/kenazk/front-end.git
+#   dependsOn:
+#   - orders-db-deployment
 
 - name: orders-deployment
   image: projectnebula/kubectl:bf8ecb9
