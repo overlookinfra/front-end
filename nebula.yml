@@ -697,7 +697,7 @@ steps:
       $type: Secret
       name: slack-token
     channel: "#nebula-workflows"
-    message: "Successfully deployed Puppetize Bike Shop to Production! 🚲🚲🚲"
+    message: "Successfully deployed Puppetize Bike Shop to Production! 🚲🚲"
   dependsOn:
     - front-end-service
     - carts-service
