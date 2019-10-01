@@ -696,7 +696,7 @@ steps:
     apitoken:
       $type: Secret
       name: slack-token
-    channel: "#nebula-workflows"
+    channel: "#puppetize-notifications"
     message: "Successfully deployed Puppetize Bike Shop to Production! 🚲🚲"
   dependsOn:
     - front-end-service
