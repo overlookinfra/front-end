@@ -11,14 +11,14 @@ steps:
       gcp_location: us-east1-b
       gcp_project: kenazk-sandbox
     workspace: nebula-demo
-    directory: example-workflows/provision-gke-terraform/infra/
+    directory: provision-gke-terraform/infra/
     credentials:
       credentials.json:
         $type: Secret
         name: credentials
     git:
       name: nebula-workflow-examples
-      repository: https://github.com/puppetlabs/nebula-workflow-examples.git
+      repository: https://github.com/kenazk/nebula-workflow-examples.git
 
 - name: create-namespace
   image: projectnebula/kubectl:bf8ecb9
