@@ -697,7 +697,7 @@ steps:
       $type: Secret
       name: slack-token
     channel: "#puppetize-notifications"
-    message: "Deployed Puppetize Bike Shop to Production! 🚲🚲🚲"
+    message: "Deployed Puppetize Bike Shop to Production!! 🚲🚲🚲"
   dependsOn:
     - front-end-service
     - carts-service
