@@ -709,6 +709,7 @@ steps:
 - name: resolve-ticket 
   image: projectnebula/jira-resolve:9e3f1fc
   spec:
+    confetti: true
     username: kenaz
     password:
       $type: Secret
