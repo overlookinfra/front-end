@@ -703,9 +703,9 @@ steps:
     - carts-service
     - catalogue-service
     - orders-service
-    - carts-db-service
-    - catalogue-db-service
-    - orders-db-service
+    # - carts-db-service
+    # - catalogue-db-service
+    # - orders-db-service
 - name: resolve-ticket 
   image: projectnebula/jira-resolve:9e3f1fc
   spec:
@@ -720,6 +720,6 @@ steps:
     - carts-service
     - catalogue-service
     - orders-service
-    - carts-db-service
-    - catalogue-db-service
-    - orders-db-service
+    # - carts-db-service
+    # - catalogue-db-service
+    # - orders-db-service
